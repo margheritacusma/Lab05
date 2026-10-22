@@ -36,11 +36,11 @@ def main(page: ft.Page):
     lista_strumenti = ft.ListView(expand=True, spacing=5, padding=10, auto_scroll=True)
 
     # Tutti i TextField per le info necessarie per aggiungere un nuovo strumento (tipo, marca, anno, contatore posti)
-    input_tipo = ft.TextField(label= "Tipo:", width = 200)
-    input_marca = ft.TextField(label= "Marca:", width = 200)
-    input_anno= ft.TextField(label= "Anno acquisto:", width = 200)
+    input_tipo = ft.TextField(label= "Tipo", width = 300)
+    input_marca = ft.TextField(label= "Marca", width = 300)
+    input_anno= ft.TextField(label= "Anno acquisto", width = 300)
 
-    txt_valore= ft.Text(value= 0, size= 20, weight=ft.FontWeight.BOLD)
+    txt_valore= ft.TextField(value= "0", width= 60, text_align= ft.TextAlign.CENTER)
 
     # --- FUNZIONI APP ---
     def aggiorna_lista_strumenti():
@@ -103,8 +103,8 @@ def main(page: ft.Page):
     pulsante_conferma_responsabile = ft.Button("Conferma", on_click=conferma_responsabile)
 
     # Pulsanti per la gestione dell'inserimento di un nuovo strumento
-    bottone_meno = ft.IconButton(icon=ft.Icons.REMOVE, icon_size=24, on_click=diminuisco_valore)
-    bottone_piu = ft.IconButton(icon=ft.Icons.ADD, icon_size=24, on_click=aumento_valore)
+    bottone_meno = ft.IconButton(icon=ft.Icons.REMOVE, icon_color=ft.Colors.RED, icon_size=24, on_click=diminuisco_valore)
+    bottone_piu = ft.IconButton(icon=ft.Icons.ADD,  icon_color=ft.Colors.GREEN, icon_size=24, on_click=aumento_valore)
     bottone_aggiungi_strumento = ft.Button("Aggiungi strumento", on_click= aggiungi_nuovo_strumento)
 
     # --- LAYOUT ---
@@ -125,8 +125,10 @@ def main(page: ft.Page):
         # Sezione 3
         ft.Divider(),
         ft.Text("Aggiungi Nuovo Strumento", size=20),
-        ft.Row(controls=[input_tipo, input_marca, input_anno], alignment=ft.MainAxisAlignment.CENTER),
-        ft.Row(controls=[ft.Text("Valore (euro):", size = 16), bottone_meno, txt_valore, bottone_piu, bottone_aggiungi_strumento], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
+        ft.Row(controls= [input_tipo, input_marca, input_anno, bottone_meno, txt_valore, bottone_piu], alignment=ft.MainAxisAlignment.CENTER),
+        ft.Row(controls=[bottone_aggiungi_strumento], alignment=ft.MainAxisAlignment.CENTER),
+        #ft.Row(controls=[input_tipo, input_marca, input_anno], alignment=ft.MainAxisAlignment.CENTER),
+        #ft.Row(controls=[ft.Text("Valore (euro):", size = 16), bottone_meno, txt_valore, bottone_piu, bottone_aggiungi_strumento], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
 
 
 
