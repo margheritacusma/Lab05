@@ -127,9 +127,6 @@ def main(page: ft.Page):
         ft.Text("Aggiungi Nuovo Strumento", size=20),
         ft.Row(controls= [input_tipo, input_marca, input_anno, bottone_meno, txt_valore, bottone_piu], alignment=ft.MainAxisAlignment.CENTER),
         ft.Row(controls=[bottone_aggiungi_strumento], alignment=ft.MainAxisAlignment.CENTER),
-        #ft.Row(controls=[input_tipo, input_marca, input_anno], alignment=ft.MainAxisAlignment.CENTER),
-        #ft.Row(controls=[ft.Text("Valore (euro):", size = 16), bottone_meno, txt_valore, bottone_piu, bottone_aggiungi_strumento], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
-
 
 
         # Sezione 4
